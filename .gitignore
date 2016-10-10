@@ -1,0 +1,12 @@
+# ignore maven
+target/
+
+#ignore eclipse
+.classpath
+.project
+.settings/
+
+#ignore root file
+/*.png
+/*.gif
+/*.jpg
