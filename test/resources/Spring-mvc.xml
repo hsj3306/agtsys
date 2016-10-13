@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	">
+
+		<!-- 使用组件扫描的方式 他使用的映射器和适配器是注解 -->
+		<context:component-scan base-package="org.agtsys.web" />
+		<!-- 以上是控制器controller也叫handler配置-->
+		<mvc:annotation-driven  />
+
+		<!-- viewsolerer 视图解析器prefix 前缀suffix 后缀 -->
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+			<property name="prefix" value="/WEB-INF/jsp/"/>
+			<property name="suffix" value=".jsp"/>
+		</bean>
+
+		<!--异常处理控制器 方法二：全局异常处理 -->
+		<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+			<property name="exceptionMappings">
+				<props>
+					<prop key="exception.Myexception">error</prop>
+				</props>
+			</property>
+		</bean>
+		
+<!-- 		静态资源访问,已移至web.xml
+		<mvc:resources location="/css/" mapping="/css/**"/>
+		<mvc:resources location="/img/" mapping="/img/**"/>
+		<mvc:resources location="/laydate/" mapping="/laydate/**"/>
+			 -->
+		
+</beans>
