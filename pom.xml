@@ -81,14 +81,6 @@
 	    <version>${spring.version}</version>
 	    <scope>test</scope>
 	</dependency>	
-
-	<!--测试包  -->
-	<dependency>
-	    <groupId>junit</groupId>
-	    <artifactId>junit</artifactId>
-	    <version>${junit.version}</version>
-	    <scope>test</scope>
-	</dependency>
 	
 	<!--mybatis核心和spring集成包  -->
 	<dependency>
@@ -146,6 +138,18 @@
 	    <artifactId>patchca</artifactId>
 	    <version>0.0.1</version>
 	</dependency>
+	<dependency>
+	    <groupId>javax.validation</groupId>
+	    <artifactId>validation-api</artifactId>
+	    <version>1.1.0.Final</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>4.3.2.Final</version>
+	</dependency>
+		
+	
 	
 	<!--spring框架默认集成的jackson包  -->
 	<dependency>
@@ -201,10 +205,19 @@
 	    <scope>provided</scope>
 	</dependency>
 	
+	<!--service测试包  -->
 	<dependency>
 	    <groupId>org.jmockit</groupId>
 	    <artifactId>jmockit</artifactId>
 	    <version>1.26</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!--测试包  -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>${junit.version}</version>
 	    <scope>test</scope>
 	</dependency>
 		
